@@ -3,9 +3,8 @@ const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
 const provider = new HDWalletProvider(
-  'REPLACE_WITH_YOUR_MNEMONIC',
-  // remember to change this to your own phrase!
-  'https://rinkeby.infura.io/v3/15c1d32581894b88a92d8d9e519e476c'
+  'tragic bicycle zoo blast gesture dragon olive huge embrace city hello cake',
+  'https://rinkeby.infura.io/v3/0617a82c0ebf487ba88aa2a051ec6ae1',
   // remember to change this to your own endpoint!
 );
 const web3 = new Web3(provider);
@@ -19,6 +18,7 @@ const deploy = async () => {
     .deploy({ data: bytecode })
     .send({ gas: '1000000', from: accounts[0] });
 
+  console.log(interface);
   console.log('Contract deployed to', result.options.address);
   provider.engine.stop();
 };
