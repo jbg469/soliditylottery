@@ -1,1 +1,1 @@
-# solidity lotter
+# solidity lottery
